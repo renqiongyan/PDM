@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<form action="{{ url_for('bp_user.add_user') }}" method="post">
+    <p>用户名：<input name="username" type="text"></p>
+      {% if form.username.errors %}
+          <span style="add_usercolor:red;">
+          {{ form.username.errors | join('<br>') }}
+          </span>
+      {% endif %}
+  <p> 密码：<input name="password" type="password"></p>
+    <p>昵称：<input name="nickname" type="text"></p>
+    <p>性别:
+        <select name="gender" >
+        <option value="M" {% if form.gender == 'M' %}selected{% endif %}>男</option>
+        <option value="F" {% if form.gender == 'F' %}selected{% endif %}>女</option>
+        <option value="NULL" selected>空</option>
+      </select>
+    </p>
+    <p>角色:
+        <select name="role" >
+        <option value="student" {% if form.role == 'student' %}selected{% endif %}>学生</option>
+        <option value="teacher" {% if form.role == 'teacher' %}selected{% endif %}>教师</option>
+      </select>
+    </p>
+    <p><input type="submit"></p>
+  </form>
+{% endblock %}

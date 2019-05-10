@@ -1,0 +1,28 @@
+{% with messages = get_flashed_messages(with_categories=True) %}
+{% if messages %}
+  {% for category, message in messages %}
+  {% if category == 'error' %}
+    <div style="color: red">
+    <h4>错误：</h4>
+    <p>{{ message }}</p>
+    </div>
+  {% elif category == 'warning' %}
+    <div style="color:yellow;">
+    <h4>警告：</h4>
+    <p>{{ message }}</p>
+    </div>
+  {% elif category == 'success' %}
+    <div style="color: green">
+    <h4>成功：</h4>
+    <p>{{ message }}</p>
+    </div>
+  {% else %}
+    <div style="color: blue">
+    <h4>通知：</h4>
+    <p>{{ message }}</p>
+    </div>
+  {% endif %}
+  {% endfor %}
+{% endif %}
+{% endwith %}
+

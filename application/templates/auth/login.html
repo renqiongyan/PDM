@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="{{ url_for('bp_auth.login') }}" method="post">
+  <p>
+    用户名：
+    <input type="text" name="username">
+    {% if form.username.errors %}
+      <span style="color:red;">{{ form.username.errors | join('<br>') }}</span>
+    {% endif %}
+  </p>
+  <p>
+    密码：
+    <input type="password" name="password">
+    {% if form.password.errors %}
+      <span style="color:red;">{{ form.password.errors | join('<br>') }}</span>
+    {% endif %}
+  </p>
+  <p>
+    <input type="submit" value="登录">
+  </p>
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <span style="color:red;">{{ messages | join('<br>') }}</span>
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

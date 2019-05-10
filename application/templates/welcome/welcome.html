@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  {% include 'flash.html' %}
+
+  {% if current_user.is_authenticated %}
+    你好：{{ current_user.nickname }}！
+    <br>
+    角色：{{ current_user.role }}
+  {% endif %}
+
+  <p>菜单
+    <a href="{{ url_for('bp_welcome.student') }}">学生</a>
+    <a href="{{ url_for('bp_welcome.teacher') }}">教师</a>
+    <a href="{{ url_for('bp_auth.logout') }}">退出</a>
+  </p>
+
+</body>
+</html>
