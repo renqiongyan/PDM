@@ -1,5 +1,4 @@
-# 启动文件12345678
-#jjj
+# 入口函数启动文件
 
 from application import create_app
 
