@@ -1,6 +1,6 @@
 from flask import Flask
 
-from application.models import Senior
+from application.models import Shopowners
 from .configuration import config
 from .extensions import flask_db, login_manager
 
@@ -31,7 +31,7 @@ def configure_extensions(app):
 
     @login_manager.user_loader
     def load_user(id):
-        return Senior.get_or_none(Senior.id == id)
+        return Shopowners.get_or_none(Shopowners.id == id)
 
 
 def configure_blueprints(app):
