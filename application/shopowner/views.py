@@ -53,7 +53,7 @@ def list_goods():
     goods = Goods.select()
     return render_template('senior/list_goods.html', goods=goods)
 
-#查看商品物流信息
+#查看商品物流详细信息
 @bp_shopowner.route('/list_trans/<int:number>')
 def list_trans(number):
     trans = Transport.select().where(Transport.number == number)
