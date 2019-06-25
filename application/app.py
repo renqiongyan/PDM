@@ -41,5 +41,8 @@ def configure_blueprints(app):
     from .senior import bp_senior
     app.register_blueprint(bp_senior, url_prefix='/senior')
 
+    from .shopowner import bp_shopowner
+    app.register_blueprint(bp_shopowner, url_prefix='/shopowner')
+
     from .welcome import bp_welcome
     app.register_blueprint(bp_welcome, url_prefix='/welcome')
