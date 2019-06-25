@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0b466a-5569-436f-96d2-6f096625df90" name="Default" comment="nothing">
+    <list default="true" id="ae0b466a-5569-436f-96d2-6f096625df90" name="Default" comment="井：更改shopowner部分py文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/shopowner/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/shopowner/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/shopowner/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/shopowner/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/shopowner/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/shopowner/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/worker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/worker/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +253,7 @@
       <workItem from="1557452368799" duration="687000" />
       <workItem from="1561358481297" duration="1532000" />
       <workItem from="1561361296661" duration="2758000" />
-      <workItem from="1561423086924" duration="10398000" />
+      <workItem from="1561423086924" duration="10587000" />
     </task>
     <task id="LOCAL-00001" summary="nothing">
       <created>1557452583591</created>
@@ -273,17 +269,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557452673629</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="井：更改shopowner部分py文件">
+      <created>1561434049521</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561434049522</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15375000" />
+    <option name="totallyTimeSpent" value="15564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18154311" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18154311" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -294,7 +297,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" visible="true" weight="0.119476266" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" side_tool="true" visible="true" weight="0.119476266" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.19614512" />
       <window_info anchor="bottom" id="Changes" order="11" />
@@ -312,7 +315,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
+    <MESSAGE value="井：更改shopowner部分py文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="井：更改shopowner部分py文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
