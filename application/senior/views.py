@@ -1,12 +1,7 @@
 from flask import render_template, flash
-from flask_login import login_required, logout_user
-
 from werkzeug.security import generate_password_hash
-
-from application.auth import bp_auth
 from application.models import User, Transport, Goods
 from application.senior import bp_senior
-
 from .forms import ShopOwnerForm
 
 
@@ -39,7 +34,6 @@ def add_user():
     form = ShopOwnerForm()
     if form.validate_on_submit():
         User.create(
-            number=form.number.data,
             account=form.account.data,
             password=generate_password_hash(form.password.data),
             name=form.name.data,
@@ -59,7 +53,6 @@ def edit_user():
     form = ShopOwnerForm()
     if form.validate_on_submit():
         User.create(
-            number=form.number.data,
             account=form.account.data,
             password=generate_password_hash(form.password.data),
             name=form.name.data,

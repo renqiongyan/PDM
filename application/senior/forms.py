@@ -6,7 +6,6 @@ from application.models import User
 
 
 class ShopOwnerForm(FlaskForm):
-    number = StringField('编号', validators=[DataRequired('编号不能为空')])
     account = StringField('账户', validators=[DataRequired('账户不能为空')])
     password = StringField('密码', validators=[DataRequired('密码不能为空')])
     name = StringField('姓名', validators=[Optional()])
