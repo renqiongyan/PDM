@@ -1,10 +1,11 @@
 from flask_login import UserMixin
 from peewee import CharField
+from wtforms import StringField
 
 from .extensions import flask_db
 
 
-class Shopowners(UserMixin, flask_db.Model):
+class User(UserMixin, flask_db.Model):
     number = CharField(null=False)
     account = CharField(null=False)
     password = CharField(null=False)
@@ -13,19 +14,7 @@ class Shopowners(UserMixin, flask_db.Model):
     birthday = CharField(null=False, max_length=15)
     phone = CharField(null=False, max_length=15)
     workaddress = CharField(null=False, max_length=50)
-
-    class Meta:
-        database = flask_db.database
-
-class Workers(UserMixin, flask_db.Model):
-    account = CharField(null=False)
-    password = CharField(null=False)
-    name = CharField(null=False, index=True, unique=True)
-    gender = CharField(null=False, choices=(('M', '男'), ('F', '女')))
-    birthday = CharField(null=False, max_length=15)
-    phone = CharField(null=False, max_length=15)
-    workadd = CharField(null=False, max_length=50)
-    type = CharField(null=False, choices=(('J', '包件员'),('F', '分拣员'), ('P', '派件员')))
+    role = StringField(null=False, choices=(('C', '总经理'), ('S', '店长'), ('W', '店员')))
 
     class Meta:
         database = flask_db.database
