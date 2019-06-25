@@ -5,11 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-  <h1>{{ worker.name }}的个人信息</h1>
-  <p>用户名：{{ worker.username }}</p>
+  <h1>{{ user.name }}的个人信息</h1>
   <p>姓名：{{ user.name }}</p>
   <p>性别：{{ user.gender }}</p>
+  <p>性别：{{ user.gender }}</p>
+
+
   <p>住址：{{ user.address }}</p>
-  <a href="{{ url_for('list_users') }}">返回</a>
+  <a href="{{ url_for('list_shopowners') }}">返回</a>
 </body>
 </html>
