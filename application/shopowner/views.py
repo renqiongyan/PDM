@@ -46,7 +46,7 @@ def edit_user():
     flash('修改成功')
     return render_template('worker/edit_user.html', user=user)
 
-#查看商品信息
+#查看商品详细信息
 @bp_shopowner.route('/list_goods')
 def list_goods():
     goods = Goods.select()
