@@ -1,6 +1,5 @@
 from flask import Flask
 
-from application.models import Shopowners
 from .configuration import config
 from .extensions import flask_db, login_manager
 
