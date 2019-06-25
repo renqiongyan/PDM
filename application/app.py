@@ -35,14 +35,14 @@ def configure_extensions(app):
 
 
 def configure_blueprints(app):
-    from .misc import bp_misc
-    app.register_blueprint(bp_misc, url_prefix='/misc')
-
-    from .senior import bp_senior
-    app.register_blueprint(bp_senior, url_prefix='/senior')
+    # from .misc import bp_misc
+    # app.register_blueprint(bp_misc, url_prefix='/misc')
+    #
+    # from .senior import bp_senior
+    # app.register_blueprint(bp_senior, url_prefix='/senior')
 
     from .shopowner import bp_shopowner
     app.register_blueprint(bp_shopowner, url_prefix='/shopowner')
 
-    from .welcome import bp_welcome
-    app.register_blueprint(bp_welcome, url_prefix='/welcome')
+    # from .welcome import bp_welcome
+    # app.register_blueprint(bp_welcome, url_prefix='/welcome')

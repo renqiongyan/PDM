@@ -18,7 +18,8 @@ def del_user(id):
 @bp_shopowner.route('/list_users')
 def list_users():
     users = User.select().where(User.role == 'worker' )
-    return render_template('worker/list_users.html', users=users )
+    flash('查看成功')
+    return render_template('shopowner/list_users.html', users=users )
 
 #增加员工信息
 @bp_shopowner.route('/add_user')
@@ -46,32 +47,14 @@ def edit_user():
     flash('修改成功')
     return render_template('worker/edit_user.html', user=user)
 
-#查看商品详细信息
+#查看商品信息
 @bp_shopowner.route('/list_goods')
 def list_goods():
     goods = Goods.select()
     return render_template('senior/list_goods.html', goods=goods)
 
-#查看该商品物流详细详细信息
-@bp_shopowner.route('/list_trans/<int:id>')
-def list_trans(id):
-    trans = Transport.select().where(Transport.id == id)
+#查看商品物流信息
+@bp_shopowner.route('/list_trans/<int:number>')
+def list_trans(number):
+    trans = Transport.select().where(Transport.number == number)
     return render_template('senior/list_trans.html', trans=trans)
-
-
-#
-# @bp_user.route('/add_user',methods=['GET', 'POST'])
-# def add_user():
-#     form = AddForm()
-#     if form.validate_on_submit():
-#         User.create(
-#             username=form.username.data,
-#             password = generate_password_hash(form.password.data),
-#             nickname = form.nickname.data,
-#             gender = form.gender.data,
-#             role = form.role.data,
-#         )
-#         flash('增加成功')
-#         return redirect(url_for('bp_user.list_users'))
-#
-#     return render_template('user/add_user.html', form=form)

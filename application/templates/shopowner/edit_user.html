@@ -6,34 +6,6 @@
 </head>
 <body>
 {% block content %}
-<form action="{{ url_for('bp_user.add_user') }}" method="post">
-    <p>用户名：<input name="name" type="text"></p>
-      {% if form.name.errors %}
-          <span style="add_usercolor:red;">
-          {{ form.name.errors | join('<br>') }}
-          </span>
-      {% endif %}
-    <p> 账号：<input name="account" type="text"></p>
-    <p> 密码：<input name="password" type="password"></p>
-    <p> 性别:
-        <select name="gender" >
-        <option value="M" {% if form.gender == 'M' %}selected{% endif %}>男</option>
-        <option value="F" {% if form.gender == 'F' %}selected{% endif %}>女</option>
-        <option value="NULL" selected>空</option>
-      </select>
-    </p>
-    <p> 生日：<input name="birthday" type="text"></p>
-    <p> 电话：<input name="phone" type="text"></p>
-    <p> 工作区域 ：<input name="workaddress" type="text"></p>
-    <p>角色:
-        <select name="role" >
-        <option value="senior" {% if form.role == 'senior' %}selected{% endif %}>总经理</option>
-        <option value="shopowner" {% if form.role == 'shopowner' %}selected{% endif %}>店长</option>
-        <option value="worker" {% if form.role == 'worker' %}selected{% endif %}>员工</option>
-      </select>
-    </p>
-    <p><input type="submit"></p>
-  </form>
   <form action="{{ url_for('bp_user.edit_user', id=user.id) }}" method="post">
       <p>用户名：<input name="name" type="text" value="{{ user.name }}"></p>
       <p>账号：<input name="account" type="text" value="{{ user.account }}"></p>
