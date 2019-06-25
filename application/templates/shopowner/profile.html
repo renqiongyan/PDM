@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>员工个人界面</title>
 </head>
 <body>
   <h1>{{ user.name }}的个人信息</h1>
   <p>姓名：{{ user.name }}</p>
+  <p>账号：{{ user.account}}</p>
+  <p>密码：{{ user.password}}</p>
   <p>性别：{{ user.gender }}</p>
-  <p>性别：{{ user.gender }}</p>
-
-
-  <p>住址：{{ user.address }}</p>
-  <a href="{{ url_for('list_shopowners') }}">返回</a>
+  <p>生日：{{ user.birthday }}</p>
+  <p>工作区域：{{ user.workaddress }}</p>
+  <a href="{{ url_for('list_users') }}">返回</a>
 </body>
 </html>

@@ -1,64 +1,61 @@
-{% extends 'base1.html' %}
-    {% block pagetitle %}
-        用户列表 <small>user list</small>
-    {% endblock %}
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
 {% block content %}
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="note note-success">
-            <h4 class="block">操作成功</h4>
-                {% for message in messages %}
-                    <p>{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
-
-    <div class="portlet-body">
-        <div class="table-scrollable">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>用户名</th>
-                        <th>昵称</th>
-                        <th>性别</th>
-                        <th>角色</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        {% for user in users %}
-                            <tr>
-                                <td>{{ loop.index }}</td>
-                                <td>{{ user.username }}</td>
-                                <td>{{ user.nickname }}</td>
-                                <td>{{ user.gender }}</td>
-                                <td>{{ user.role }}</td>
-                            </tr>
-                        {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-{% endblock %}
-
-
-  <form action="{{ url_for('edit_user', id=user.id) }}" method="post">
-    <p>姓名：<input name="name" type="text" value="{{ user.name }}"></p>
-    <p>
-      性别:
-      <select name="gender" >
-        <option value="M" {% if user.gender == 'M' %}selected{% endif %}>男</option>
-        <option value="F" {% if user.gender == 'F' %}selected{% endif %}>女</option>
-        <option value="MF">男女</option>
-      </select>
-      {% if form.gender.errors %}
-      <span style="color:red;">
-      {{ form.gender.errors | join('<br>') }}
-      </span>
+<form action="{{ url_for('bp_user.add_user') }}" method="post">
+    <p>用户名：<input name="name" type="text"></p>
+      {% if form.name.errors %}
+          <span style="add_usercolor:red;">
+          {{ form.name.errors | join('<br>') }}
+          </span>
       {% endif %}
+    <p> 账号：<input name="account" type="text"></p>
+    <p> 密码：<input name="password" type="password"></p>
+    <p> 性别:
+        <select name="gender" >
+        <option value="M" {% if form.gender == 'M' %}selected{% endif %}>男</option>
+        <option value="F" {% if form.gender == 'F' %}selected{% endif %}>女</option>
+        <option value="NULL" selected>空</option>
+      </select>
+    </p>
+    <p> 生日：<input name="birthday" type="text"></p>
+    <p> 电话：<input name="phone" type="text"></p>
+    <p> 工作区域 ：<input name="workaddress" type="text"></p>
+    <p>角色:
+        <select name="role" >
+        <option value="senior" {% if form.role == 'senior' %}selected{% endif %}>总经理</option>
+        <option value="shopowner" {% if form.role == 'shopowner' %}selected{% endif %}>店长</option>
+        <option value="worker" {% if form.role == 'worker' %}selected{% endif %}>员工</option>
+      </select>
     </p>
     <p><input type="submit"></p>
   </form>
-
+  <form action="{{ url_for('bp_user.edit_user', id=user.id) }}" method="post">
+      <p>用户名：<input name="name" type="text" value="{{ user.name }}"></p>
+      <p>账号：<input name="account" type="text" value="{{ user.account }}"></p>
+      <p>密码：<input name="password" type="password" value="{{ user.password }}"></p>
+      <p>性 别:
+       <select name="gender" >
+         <option value="M" {% if user.gender =='M'%}selected{% endif %}>男</option>
+         <option value="F" {% if user.gender =='F' %}selected{% endif %}>女</option>
+       </select>
+      {% if form.gender.errors %}#}
+       <span style="color:red;">
+       {{ form.gender.errors | join('<br>') }}
+       </span>
+       {% endif %}
+      </p>
+      <p>生日：<input name="birthday" type="text" value="{{ user.birthday }}"></p>
+      <p>电话：<input name="phone" type="text" value="{{ user.phone }}"></p>
+      <p>工作区域：<input name="workaddress" type="text" value="{{ user.workaddress }}"></p>
+      <p ><input type="submit"></p>
+      </p>
+      <p><input type="submit"></p>
+ </form>
+{% endblock %}
+</body>
+</html>

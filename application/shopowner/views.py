@@ -7,8 +7,8 @@ from application.shopowner import bp_shopowner
 from application.shopowner.forms import WorkerForm
 
 #删除员工信息
-@bp_shopowner.route('/del_user')
-def del_user():
+@bp_shopowner.route('/del_user/<int:id>')
+def del_user(id):
     user = User.select().where(User.id == id).get()
     user.delete_instance()
     flash('删除成功')

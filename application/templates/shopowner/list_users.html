@@ -1,46 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 {% extends 'base1.html' %}
 
 
                 {% block pagetitle %}
-			用户列表 <small>user list</small>
+			员工表 <small>user list</small>
                 {% endblock %}
-
-{% block content %}
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="note note-success">
-            <h4 class="block">操作成功</h4>
-                {% for message in messages %}
-                    <p>{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
-
-    <div class="portlet-body">
-        <div class="table-scrollable">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>用户名</th>
-                        <th>昵称</th>
-                        <th>性别</th>
-                        <th>角色</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        {% for user in users %}
-                            <tr>
-                                <td>{{ loop.index }}</td>
-                                <td>{{ user.username }}</td>
-                                <td>{{ user.nickname }}</td>
-                                <td>{{ user.gender }}</td>
-                                <td>{{ user.role }}</td>
-                            </tr>
-                        {% endfor %}
-                </tbody>
-
 
             <body>
 
@@ -59,28 +29,37 @@
         <tr>
             <td>#</td>
             <td>用户名</td>
-            <td>姓名</td>
+            <td>账号</td>
+            <td>密码</td>
             <td>性别</td>
-            <td>出生日期</td>
+            <td>生日</td>
+            <td>电话</td>
+            <td>工作区域</td>
             <td>详情</td>
-            <td>操作</td>
+            <td>操作1</td>
+            <td>操作2</td>
+            <td>操作3</td>
+
         </tr>
     </thead>
     <tbody>
     {% for user in users %}
         <tr><td>{{ loop.index }}</td>
-            <td>{{ user.username }}</td>
             <td>{{ user.name }}</td>
+            <td>{{ user.account }}</td>
+            <td>{{ user.passoword }}</td>
             <td>{{ user.gender }}</td>
-            <td>{{ user.birthdate }}</td>
-            <td><a href="{{ url_for('profile',id=user.id) }}">查看</a></td>
-            <td><a href="{{ url_for('delete_user',id=user.id) }}">删除</a></td>
+            <td>{{ user.birthday }}</td>
+            <td>{{ user.phone}}</td>
+            <td>{{ user.workaddress }}</td>
+            <td><a href="{{url_for('bp_user.profile', id=user.account)}}">查看</a></td>
+            <td><a href="{{url_for('bp_user.add_user', id=user.account)}}">增加</a></td>
+            <td><a href="{{url_for('bp_user.edit_user', id=user.account) }}">修改</a></td>
+            <td><a href="{{url_for('bp_user.del_user', id=user.account) }}">删除</a></td>
         </tr>
     {% endfor %}
     </tbody>
     </table>
 </body>
-            </table>
-        </div>
-    </div>
-{% endblock %}
+</body>
+</html>>
