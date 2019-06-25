@@ -25,6 +25,7 @@
                         <th>昵称</th>
                         <th>性别</th>
                         <th>角色</th>
+                        <th>详情</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@
                                 <td>{{ user.nickname }}</td>
                                 <td>{{ user.gender }}</td>
                                 <td>{{ user.role }}</td>
+                                <td>{{ url_for('bp_senior.user_info', id=user.id) }}</td>
                             </tr>
                         {% endfor %}
                 </tbody>
